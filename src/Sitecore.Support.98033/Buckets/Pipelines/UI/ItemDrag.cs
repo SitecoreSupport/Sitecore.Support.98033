@@ -181,6 +181,9 @@
 					Event.RaiseEvent("item:bucketing:dragged", args, this);
 				}
 			}
+			Database database = this.GetDatabase(args);
+			Item source = this.GetSource(args, database);
+			this.SetSortorder(source, args);
 		}
 
 		internal void StartCopyProcess(ClientPipelineArgs args)
