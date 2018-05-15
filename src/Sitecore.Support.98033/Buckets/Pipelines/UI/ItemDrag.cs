@@ -53,6 +53,9 @@ namespace Sitecore.Support.Buckets.Pipelines.UI
             Event.RaiseEvent("item:bucketing:dragged", new object[] { args, this });
           }
         }
+      Database database = GetDatabase(args);
+      Item source = GetSource(args, database);
+      SetSortorder(source, args);
     }
 
       public void Execute(ClientPipelineArgs args)
